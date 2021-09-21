@@ -13,4 +13,5 @@ coverage
 .cache
 .DS_Store
 lib
+
 dist
