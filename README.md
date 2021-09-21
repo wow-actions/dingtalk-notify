@@ -1,5 +1,5 @@
 <h1 align="center">DingTalk Notify</h1>
-<p align="center"><strong>Send DingTalk notify message</strong></p>
+<p align="center"><strong>Send DingTalk message</strong></p>
 
 ## Usage
 
