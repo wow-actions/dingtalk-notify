@@ -25,5 +25,5 @@ jobs:
           content: |
             {
               "title": "[${{ github.event.pull_request.user.login }}](${{ github.event.pull_request.user.html_url }}) CREATED PullRequest: ${{ github.event.pull_request.title }} ([#${{ github.event.pull_request.number }}](github.event.pull_request.html_url))",
-              "text": "${{ toJSON(github.event.pull_request.body) }}"
+              "text": ${{ toJSON(github.event.pull_request.body) }}
             }
