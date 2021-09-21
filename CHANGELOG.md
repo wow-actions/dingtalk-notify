@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/wow-actions/dingtalk-notify/compare/v1.0.0...v1.0.1) (2021-09-21)
+
+
+### Bug Fixes
+
+* 🐛 debug info ([2b53cc8](https://github.com/wow-actions/dingtalk-notify/commit/2b53cc8d61645cd55fadd1419a146b951e94983d))
+
 # 1.0.0 (2021-09-21)
 
 
