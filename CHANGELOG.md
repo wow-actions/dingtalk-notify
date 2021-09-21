@@ -7,6 +7,7 @@
 
 * 🐛 sign secret-key ([175b6ca](https://github.com/wow-actions/dingtalk-notify/commit/175b6ca606b61aa1f046b7ee4f78278053ffe29d))
 
+
 ## [1.0.1](https://github.com/wow-actions/dingtalk-notify/compare/v1.0.0...v1.0.1) (2021-09-21)
 
 
