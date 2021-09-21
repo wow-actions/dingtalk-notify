@@ -1,6 +1,6 @@
 {
   "name": "dingtalk-notify",
-  "description": "Send DingTalk notify message",
+  "description": "Send DingTalk notify message.",
   "version": "1.0.0",
   "main": "dist/index.js",
   "files": [
