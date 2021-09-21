@@ -1,0 +1,27 @@
+name: DingTalk Notify On PR Created
+on:
+  pull_request_target:
+    types: [opened]
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: hmarr/debug-action@v2
+      - uses: actions/checkout@v2
+      - name: Install
+        run: |
+          yarn
+      - name: Build
+        run: |
+          yarn build
+
+      - uses: ./
+        with:
+          token: ${{ secrets.DINGTALK_TOKEN }}
+          secret: ${{ secrets.DINGTALK_SECRET }}
+          msgtype: markdown
+          content: |
+            {
+              “title”: "",
+              "text": "Hello DingTalk"
+            }
