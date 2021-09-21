@@ -70,16 +70,17 @@ export async function run() {
     }
 
     try {
+      core.debug(`webhook: ${url.toString()}`)
       const res = await axios.post(url.toString(), JSON.stringify(payload), {
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json; charset=utf-8',
         },
       })
 
-      core.debug(`response: ${res.data}`)
+      core.debug(`response: ${JSON.stringify(res.data, null, 2)}`)
 
       if (res.data.errcode) {
-        throw new Error(`[${res.data.errcode}] ${res.data.message}`)
+        throw new Error(`[${res.data.errcode}] ${res.data.errmsg}`)
       }
     } catch (e) {
       if (ignoreError) {
