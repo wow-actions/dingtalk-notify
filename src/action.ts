@@ -66,7 +66,7 @@ export async function run() {
         .update(stringToSign)
         .digest('base64')
       url.searchParams.append('timestamp', `${timestamp}`)
-      url.searchParams.append('sign', sign)
+      url.searchParams.append('sign', encodeURIComponent(sign))
     }
 
     try {
