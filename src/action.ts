@@ -17,6 +17,7 @@ export async function run() {
       core.setFailed(
         `The input of "type" should be one of ${VALID_TYPES.join(',')}`,
       )
+      return
     }
 
     let content
@@ -25,7 +26,10 @@ export async function run() {
     try {
       content = JSON.parse(textContent)
     } catch (e) {
-      core.setFailed('The input of "content" should be valid JSON string')
+      core.setFailed(
+        `The input of "content" should be valid JSON string, Check the input: ${textContent}`,
+      )
+      return
     }
 
     try {
@@ -40,8 +44,9 @@ export async function run() {
       }
     } catch (e) {
       core.setFailed(
-        'The input of "at" should be valid JSON string or "all" to at all users',
+        `The input of "at" should be valid JSON string or "all" to at all users. Check the input ${textAt}`,
       )
+      return
     }
 
     const payload = {
