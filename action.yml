@@ -1,0 +1,29 @@
+name: DingTalk Notify
+description: Send DingTalk notify message
+author: bubkoo <bubkoo.wy@gmail.com>
+inputs:
+  token:
+    description: Dingtalk bot token
+    required: true
+  secret:
+    description: The secret to sign the request
+    required: false
+  type:
+    description: 'Dingtalk message type. Valid types are: text, markdown, link, actionCard, feedCard.'
+    required: false
+    default: text
+  content:
+    description: Message content in JSON type
+    required: true
+  at:
+    description: At users in JSON type
+    required: false
+  ignoreError:
+    description: If set true, will not fail action when API call failed
+    required: false
+runs:
+  using: node12
+  main: dist/index.js
+branding:
+  icon: message-square
+  color: blue
