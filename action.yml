@@ -8,7 +8,7 @@ inputs:
   secret:
     description: The secret to sign the request
     required: false
-  type:
+  msgtype:
     description: 'Dingtalk message type. Valid types are: text, markdown, link, actionCard, feedCard.'
     required: false
     default: text

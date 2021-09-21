@@ -5,11 +5,11 @@
 
 **STEP 1**: Follow the [tutorial](https://developers.dingtalk.com/document/robots/custom-robot-access) to setup a DingTalk bot.
 
-You will get a webhook url like this `https://oapi.dingtalk.com/robot/send?access_token=xxx`
+We will get a webhook url like `https://oapi.dingtalk.com/robot/send?access_token=xxx`
 
-**STEP 2**: Go to your repository settings page(`https://github.com/{{ USERNAME }}/{{ REPO }}/settings/secrets`) to create some secrets.
+**STEP 2**: Go to your repository settings page(`https://github.com/USERNAME/REPO/settings/secrets`) to create some secrets.
 
-at least we need to create a secret named `"DINGTALK_TOKEN"` with value of `"access_token"` in the webhook url.
+At least we need to create a secret named `"DINGTALK_TOKEN"` with value of `"access_token"` in the webhook url.
 
 For singed bot we also need to create a secret named `"DINGTALK_SECRET"` with the value of secret-key.
 
