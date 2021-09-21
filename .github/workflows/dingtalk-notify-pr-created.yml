@@ -6,18 +6,10 @@ jobs:
   send:
     runs-on: ubuntu-latest
     steps:
-      - uses: hmarr/debug-action@v2
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
         run: echo "$GITHUB_CONTEXT"
-      - uses: actions/github-script@v4
-        with:
-          script: |
-            const { FIRST_NAME, LAST_NAME } = process.env
-
-            console.log(`Hello ${FIRST_NAME} ${LAST_NAME}`)
-
       - uses: actions/checkout@v2
       - name: Install
         run: |
@@ -25,7 +17,6 @@ jobs:
       - name: Build
         run: |
           yarn build
-
       - uses: ./
         with:
           token: ${{ secrets.DINGTALK_TOKEN }}
@@ -34,5 +25,5 @@ jobs:
           content: |
             {
               "title": "[${{ github.event.pull_request.user.login }}](${{ github.event.pull_request.user.html_url }}) CREATED PullRequest: ${{ github.event.pull_request.title }} ([#${{ github.event.pull_request.number }}](github.event.pull_request.html_url))",
-              "text": "${{ github.event.pull_request.body }}"
+              "text": "${{ toJSON(github.event.pull_request.body) }}"
             }
