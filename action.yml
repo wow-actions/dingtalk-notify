@@ -1,5 +1,5 @@
 name: DingTalk Notify
-description: Send DingTalk notify message
+description: Send DingTalk notify message.
 author: bubkoo <bubkoo.wy@gmail.com>
 inputs:
   token:
