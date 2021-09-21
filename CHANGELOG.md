@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/wow-actions/dingtalk-notify/compare/v1.0.4...v1.0.5) (2021-09-21)
+
+
+### Bug Fixes
+
+* 🐛 should return on failed ([01cf1eb](https://github.com/wow-actions/dingtalk-notify/commit/01cf1eb16bfef61130836afb0c0cb5ea7d7c073a))
+
 ## [1.0.4](https://github.com/wow-actions/dingtalk-notify/compare/v1.0.3...v1.0.4) (2021-09-21)
 
 ## [1.0.3](https://github.com/wow-actions/dingtalk-notify/compare/v1.0.2...v1.0.3) (2021-09-21)
