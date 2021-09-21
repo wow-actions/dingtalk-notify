@@ -45,9 +45,9 @@ export async function run() {
     }
 
     const payload = {
+      at,
       msgtype,
       [msgtype]: content,
-      at,
     }
 
     core.debug(`payload: ${JSON.stringify(payload, null, 2)}`)
