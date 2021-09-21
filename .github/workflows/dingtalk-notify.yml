@@ -21,6 +21,6 @@ jobs:
           secret: ${{ secrets.DINGTALK_SECRET }} # only for signed bot
           msgtype: text
           content: |
-          {
-            "content": "Hello DingTalk"
-          }
+            {
+              "content": "Hello DingTalk"
+            }
