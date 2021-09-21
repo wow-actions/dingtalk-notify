@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/wow-actions/dingtalk-notify/compare/v1.0.6...v1.0.7) (2021-09-21)
+
+
+### Bug Fixes
+
+* 🐛 markdown content ([5efdd05](https://github.com/wow-actions/dingtalk-notify/commit/5efdd05eff6046539de3abb2e4df6904d1849914))
+
 ## [1.0.6](https://github.com/wow-actions/dingtalk-notify/compare/v1.0.5...v1.0.6) (2021-09-21)
 
 
