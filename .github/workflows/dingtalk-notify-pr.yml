@@ -1,0 +1,46 @@
+name: DingTalk Notify On PR
+on:
+  pull_request_target:
+    types: [opened, edited, closed, reopened]
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT"
+      - uses: actions/checkout@v2
+      - name: Install
+        run: |
+          yarn
+      - name: Build
+        run: |
+          yarn build
+      - name: Prepare
+        id: prepare
+        run: |
+          action=${{ github.event.action }}
+          if [ $action == "closed" ] && [ "${{ github.event.pull_request.state }}" == "merged" ]
+          then
+            action="merged"
+          fi
+
+          echo "::set-output name=card_title::[${{ github.event.sender.login }}](${{ github.event.sender.html_url }}) **$action** pull request"
+          echo "::set-output name=card_subtitle::${{ github.event.pull_request.title }} ([#${{ github.event.pull_request.number }}](${{ github.event.pull_request.html_url }}))"
+          echo "::set-output name=card_avatar::![avatar](${{ github.event.sender.avatar_url }})"
+          echo "::set-output name=card_link::${{ github.event.pull_request.html_url }}"
+          echo "::set-output name=card_body::${{ toJSON(github.event.pull_request.body) }}"
+      - name: Send
+        uses: ./
+        with:
+          token: ${{ secrets.DINGTALK_TOKEN }}
+          secret: ${{ secrets.DINGTALK_SECRET }}
+          msgtype: actionCard
+          content: |
+            {
+              "title": "${{ steps.prepare.outputs.card_title }}",
+              "text": "${{ steps.prepare.outputs.card_avatar }} \n\n${{ steps.prepare.outputs.card_title }} \n\n${{ steps.prepare.outputs.card_subtitle }} \n\n${{ steps.prepare.outputs.card_body }}",
+              "singleURL": "${{ steps.prepare.outputs.card_link }}",
+              "singleTitle": "查看详情"
+            }
