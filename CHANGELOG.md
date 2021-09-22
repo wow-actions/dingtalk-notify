@@ -3,6 +3,14 @@
 
 ### Bug Fixes
 
+* 🐛 should return early on inputs error ([fbb8d36](https://github.com/wow-actions/dingtalk-notify/commit/fbb8d36cffff7224b169bb3f097fd40b5c3bd19b))
+* 🐛 sign secret-key ([175b6ca](https://github.com/wow-actions/dingtalk-notify/commit/175b6ca606b61aa1f046b7ee4f78278053ffe29d))
+
+## [1.0.2](https://github.com/wow-actions/dingtalk-notify/compare/v1.0.1...v1.0.2) (2021-09-22)
+
+
+### Bug Fixes
+
 * 🐛 sign secret-key ([175b6ca](https://github.com/wow-actions/dingtalk-notify/commit/175b6ca606b61aa1f046b7ee4f78278053ffe29d))
 
 ## [1.0.1](https://github.com/wow-actions/dingtalk-notify/compare/v1.0.0...v1.0.1) (2021-09-21)
