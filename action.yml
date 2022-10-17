@@ -22,7 +22,7 @@ inputs:
     description: If set true, will not fail action when API call failed
     required: false
 runs:
-  using: node12
+  using: node16
   main: dist/index.js
 branding:
   icon: message-square
