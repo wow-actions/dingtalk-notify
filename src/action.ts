@@ -2,7 +2,7 @@ import axios from 'axios'
 import crypto from 'crypto'
 import * as core from '@actions/core'
 
-const VALID_TYPES = ['text', 'url', 'markdown', 'actionCard', 'feedCard']
+const VALID_TYPES = ['text', 'link', 'markdown', 'actionCard', 'feedCard']
 
 export async function run() {
   try {
